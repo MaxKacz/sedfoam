@@ -201,7 +201,7 @@ twophasekOmegaVarDensity<BasicTurbulenceModel>::twophasekOmegaVarDensity
             0.5
         )
     ),
-    sigmat_
+    /*sigmat_
     (
         dimensioned<scalar>::getOrAddToDict
         (
@@ -209,7 +209,7 @@ twophasekOmegaVarDensity<BasicTurbulenceModel>::twophasekOmegaVarDensity
             this->coeffDict_,
             0.85
         )
-    ),
+    ),*/
     tmfexp_(U.db().lookupObject<volScalarField> ("tmfexp")),
     ESD3_(U.db().lookupObject<volScalarField> ("ESD3")),
     ESD4_(U.db().lookupObject<volScalarField> ("ESD4")),
