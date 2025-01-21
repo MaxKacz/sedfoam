@@ -214,3 +214,16 @@ volScalarField ESD
     ),
     KE3*ESD3
 );
+
+volScalarField gGradRho
+(
+    IOobject
+    (
+        "gGradRho",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::NO_WRITE
+    ),
+    gravity & fvc::grad(rho)
+);

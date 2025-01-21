@@ -126,6 +126,7 @@ protected:
             dimensionedScalar alphaKOmega_;
             dimensionedScalar alphaOmega_;
             dimensionedScalar alphaOmegaOmega_;
+            dimensionedScalar sigmat_;
 
          // Flow information
          // two phase information
@@ -134,6 +135,7 @@ protected:
             const volScalarField& ESD4_;
             const volScalarField& ESD5_;
             const volScalarField& ESD_;
+            const volScalarField& gGradRho_;
 
         // Fields
 

@@ -70,3 +70,6 @@ ESD5 = ESD5 + KE1*ESD1;
 ESD3 = -2.0*K*alpha/rhob;
 
 ESD = KE3*ESD3;   //need to check here!
+
+// buoyancy term of turbulence
+gGradRho = gravity & fvc::grad(rho);

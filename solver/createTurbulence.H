@@ -53,6 +53,7 @@ turbulencea
     sedIncompressibleTurbulenceModel<singlePhaseTransportModel>::New
     (
         alphaEff,
+        rhoa,
         Ua,
         alphaPhia,
         phia,
@@ -79,6 +80,7 @@ turbulenceb
     sedIncompressibleTurbulenceModel<singlePhaseTransportModel>::New
     (
         beta,
+        rhob,
         Ub,
         betaPhib,
         phib,

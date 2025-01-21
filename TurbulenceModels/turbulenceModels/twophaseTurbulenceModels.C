@@ -38,8 +38,8 @@ License
 makeTurbulenceModelTypes
 (
     volScalarField,
-    geometricOneField,
-    incompressibleTurbulenceModel,
+    volScalarField,
+    incompressibleRhoTurbulenceModel,
     sedIncompressibleTurbulenceModel,
     singlePhaseTransportModel
 );
@@ -47,8 +47,8 @@ makeTurbulenceModelTypes
 makeBaseTurbulenceModel
 (
     volScalarField,
-    geometricOneField,
-    incompressibleTurbulenceModel,
+    volScalarField,
+    incompressibleRhoTurbulenceModel,
     sedIncompressibleTurbulenceModel,
     singlePhaseTransportModel
 );
@@ -68,38 +68,6 @@ makeBaseTurbulenceModel
 #include "Stokes.H"
 makeLaminarModel(Stokes);
 
-#include "kEpsilon.H"
-makeRASModel(kEpsilon);
-
-#include "kOmega.H"
-makeRASModel(kOmega);
-
-#include "twophasekEpsilon.H"
-makeRASModel(twophasekEpsilon);
-
-#include "twophaseMixingLength.H"
-makeRASModel(twophaseMixingLength);
-
-#include "twophaseMixingLengthConst.H"
-makeRASModel(twophaseMixingLengthConst);
-
-#include "twophaseMixingLengthBerzi.H"
-makeRASModel(twophaseMixingLengthBerzi);
-
-#include "twophasekOmega.H"
-makeRASModel(twophasekOmega);
-
 #include "twophasekOmegaVarDensity.H"
 makeRASModel(twophasekOmegaVarDensity);
 
-#include "partDynamicLagrangian.H"
-makeLESModel(partDynamicLagrangian);
-
-#include "fluidDynamicLagrangian.H"
-makeLESModel(fluidDynamicLagrangian);
-
-#include "partSmagorinsky.H"
-makeLESModel(partSmagorinsky);
-
-#include "fluidSmagorinsky.H"
-makeLESModel(fluidSmagorinsky);

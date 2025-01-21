@@ -42,7 +42,8 @@ SourceFiles
 #define sedIncompressibleTurbulenceModel_H
 
 #include "TurbulenceModel.H"
-#include "incompressibleTurbulenceModel.H"
+//#include "incompressibleTurbulenceModel.H"
+#include "incompressibleRhoTurbulenceModel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -59,8 +60,8 @@ class sedIncompressibleTurbulenceModel
     public TurbulenceModel
     <
         volScalarField,
-        geometricOneField,
-        incompressibleTurbulenceModel,
+        volScalarField,
+        incompressibleRhoTurbulenceModel,
         TransportModel
     >
 {
@@ -68,7 +69,7 @@ class sedIncompressibleTurbulenceModel
 public:
 
     typedef volScalarField alphaField;
-    typedef geometricOneField rhoField;
+    typedef volScalarField rhoField;
     typedef TransportModel transportModel;
 
 
@@ -79,7 +80,7 @@ public:
         (
             const word& type,
             const alphaField& alpha,
-            const geometricOneField& rho,
+            const volScalarField& rho,
             const volVectorField& U,
             const surfaceScalarField& alphaRhoPhi,
             const surfaceScalarField& phi,
@@ -94,6 +95,7 @@ public:
         static autoPtr<sedIncompressibleTurbulenceModel> New
         (
             const alphaField& alpha,
+            const volScalarField& rho,
             const volVectorField& U,
             const surfaceScalarField& alphaRhoPhi,
             const surfaceScalarField& phi,

@@ -201,7 +201,7 @@ twophasekOmegaVarDensity<BasicTurbulenceModel>::twophasekOmegaVarDensity
             0.5
         )
     ),
-    /*sigmat_
+    sigmat_
     (
         dimensioned<scalar>::getOrAddToDict
         (
@@ -209,12 +209,13 @@ twophasekOmegaVarDensity<BasicTurbulenceModel>::twophasekOmegaVarDensity
             this->coeffDict_,
             0.85
         )
-    ),*/
+    ),
     tmfexp_(U.db().lookupObject<volScalarField> ("tmfexp")),
     ESD3_(U.db().lookupObject<volScalarField> ("ESD3")),
     ESD4_(U.db().lookupObject<volScalarField> ("ESD4")),
     ESD5_(U.db().lookupObject<volScalarField> ("ESD5")),
     ESD_(U.db().lookupObject<volScalarField> ("ESD")),
+    gGradRho_(U.db().lookupObject<volScalarField> ("gGradRho")),
     k_
     (
         IOobject
@@ -383,7 +384,7 @@ void twophasekOmegaVarDensity<BasicTurbulenceModel>::correct()
       + fvm::Sp(beta()*rho()*ESD_, k_)
       + fvm::Sp(beta()*rho()*KE4_*ESD4_*nut/k_, k_)
       + ESD2()*fvm::Sp(beta()*rho()*KE2_, k_)
-      //- fvm::SuSp((g & fvc::grad(rho))/(omega_*sigmat), k_)
+      - fvm::SuSp(gGradRho_/(omega_*sigmat_), k_)
     );
 
     kEqn.ref().relax();

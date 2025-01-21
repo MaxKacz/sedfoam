@@ -35,7 +35,7 @@ sedIncompressibleTurbulenceModel
 (
     const word& type,
     const volScalarField& alpha,
-    const geometricOneField& rho,
+    const volScalarField& rho,
     const volVectorField& U,
     const surfaceScalarField& alphaRhoPhi,
     const surfaceScalarField& phi,
@@ -46,8 +46,8 @@ sedIncompressibleTurbulenceModel
     TurbulenceModel
     <
         volScalarField,
-        geometricOneField,
-        incompressibleTurbulenceModel,
+        volScalarField,
+        incompressibleRhoTurbulenceModel,
         TransportModel
     >
     (
@@ -69,6 +69,7 @@ Foam::autoPtr<Foam::sedIncompressibleTurbulenceModel<TransportModel>>
 Foam::sedIncompressibleTurbulenceModel<TransportModel>::New
 (
     const volScalarField& alpha,
+    const volScalarField& rho,
     const volVectorField& U,
     const surfaceScalarField& alphaRhoPhi,
     const surfaceScalarField& phi,
@@ -82,13 +83,13 @@ Foam::sedIncompressibleTurbulenceModel<TransportModel>::New
         TurbulenceModel
         <
             volScalarField,
-            geometricOneField,
-            incompressibleTurbulenceModel,
+            volScalarField,
+            incompressibleRhoTurbulenceModel,
             TransportModel
         >::New
         (
             alpha,
-            geometricOneField(),
+            rho,
             U,
             alphaRhoPhi,
             phi,
