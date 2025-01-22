@@ -196,12 +196,12 @@ Info<< "Warning : alpha_b read but not used!\n" << endl;
 Info<< "alpha_b is set to 1 - alpha_a\n" << endl;
 beta = 1 - alpha;
 surfaceScalarField& phib = phaseb->phi();
-volScalarField& rhob = phaseb->rho();
+const dimensionedScalar& rhob = phaseb->rho();
 const dimensionedScalar& nub = phaseb->nu();
 
 volVectorField& Ua = phasea->U();
 surfaceScalarField& phia = phasea->phi();
-volScalarField& rhoa = phasea->rho();
+const dimensionedScalar& rhoa = phasea->rho();
 const dimensionedScalar& nua = phasea->nu();
 
 // Reading ForceProperties
