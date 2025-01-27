@@ -61,7 +61,7 @@ Foam::tmp<Foam::volScalarField> Foam::LunPressure::granularPressureCoeff
 (
     const volScalarField& alpha,
     const volScalarField& g0,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& e
 ) const
 {
@@ -75,7 +75,7 @@ Foam::tmp<Foam::volScalarField> Foam::LunPressure::granularPressureCoeffPrime
     const volScalarField& alpha,
     const volScalarField& g0,
     const volScalarField& g0prime,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& e
 ) const
 {

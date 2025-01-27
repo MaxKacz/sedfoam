@@ -55,9 +55,9 @@ Foam::tmp<Foam::volScalarField> Foam::granularRheologyModels::noneFriction::muI
     const dimensionedScalar& mu2,
     const dimensionedScalar& I0,
     const volScalarField& pa,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
-    const dimensionedScalar& rhob,
+    const volScalarField& rhob,
     const dimensionedScalar& nub,
     const volScalarField& magD,
     const dimensionedScalar& Dsmall
@@ -69,9 +69,9 @@ Foam::tmp<Foam::volScalarField> Foam::granularRheologyModels::noneFriction::muI
 Foam::tmp<Foam::volScalarField> Foam::granularRheologyModels::noneFriction::I
 (
     const volScalarField& pa,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
-    const dimensionedScalar& rhob,
+    const volScalarField& rhob,
     const dimensionedScalar& nub,
     const volScalarField& magD
 ) const

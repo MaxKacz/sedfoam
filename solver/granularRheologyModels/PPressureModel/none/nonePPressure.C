@@ -57,9 +57,9 @@ Foam::tmp<Foam::volScalarField> Foam::granularRheologyModels::nonePPressure::pa
 (
     const volScalarField& pf,
     const dimensionedScalar& Bphi,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
-    const dimensionedScalar& rhob,
+    const volScalarField& rhob,
     const dimensionedScalar& nub,
     const volScalarField& magD,
     const volScalarField& alpha,
@@ -76,9 +76,9 @@ nonePPressure::alphaEq
 (
     const volScalarField& pa,
     const dimensionedScalar& Bphi,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
-    const dimensionedScalar& rhob,
+    const volScalarField& rhob,
     const dimensionedScalar& nub,
     const volScalarField& magD,
     const dimensionedScalar& alphaMax

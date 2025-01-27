@@ -63,7 +63,7 @@ Foam::kineticTheoryModels::JenkinsSaltation::musalt
 (
         const volScalarField& alpha,
         const volScalarField& Theta,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
         const volScalarField& K
 ) const
@@ -76,7 +76,7 @@ Foam::kineticTheoryModels::JenkinsSaltation::kappasalt
 (
         const volScalarField& alpha,
         const volScalarField& Theta,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
         const volScalarField& K
 ) const

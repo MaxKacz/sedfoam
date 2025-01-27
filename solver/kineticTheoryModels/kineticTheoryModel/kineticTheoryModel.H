@@ -74,7 +74,7 @@ class kineticTheoryModel
 
         const dragModel& draga_;
 
-        const dimensionedScalar& rhoa_;
+        const volScalarField& rhoa_;
         const dimensionedScalar& da_;
         const dimensionedScalar& nua_;
 

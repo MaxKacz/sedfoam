@@ -110,7 +110,7 @@ public:
         (
             const volScalarField& alpha,
             const volScalarField& Theta,
-            const dimensionedScalar& rhoa,
+            const volScalarField& rhoa,
             const dimensionedScalar& da,
             const volScalarField& K
         ) const = 0;
@@ -119,7 +119,7 @@ public:
         (
             const volScalarField& alpha,
             const volScalarField& Theta,
-            const dimensionedScalar& rhoa,
+            const volScalarField& rhoa,
             const dimensionedScalar& da,
             const volScalarField& K
         ) const = 0;

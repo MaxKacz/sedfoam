@@ -79,7 +79,7 @@ class phaseModel
         dimensionedScalar nu_;
 
         //- density
-        dimensionedScalar rho_;
+        volScalarField rho_;
 
         //- Velocity
         volVectorField U_;
@@ -154,7 +154,7 @@ public:
             return nu_;
         }
 
-        const dimensionedScalar& rho() const
+        const volScalarField& rho() const
         {
             return rho_;
         }

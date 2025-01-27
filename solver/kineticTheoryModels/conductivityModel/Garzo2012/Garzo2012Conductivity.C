@@ -65,7 +65,7 @@ Foam::tmp<Foam::volScalarField> Foam::Garzo2012Conductivity::kappa
     const volScalarField& g0,
     const volScalarField& kappasalt,
     const volScalarField& K,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
     const dimensionedScalar& e
 ) const

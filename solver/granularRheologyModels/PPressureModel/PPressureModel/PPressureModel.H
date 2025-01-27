@@ -110,9 +110,9 @@ class PPressureModel
     (
         const volScalarField& pf,
         const dimensionedScalar& Bphi,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
-        const dimensionedScalar& rhob,
+        const volScalarField& rhob,
         const dimensionedScalar& nub,
         const volScalarField& magD,
         const volScalarField& alpha,
@@ -124,9 +124,9 @@ class PPressureModel
     (
         const volScalarField& pa,
         const dimensionedScalar& Bphi,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
-        const dimensionedScalar& rhob,
+        const volScalarField& rhob,
         const dimensionedScalar& nub,
         const volScalarField& magD,
         const dimensionedScalar& alphaMax

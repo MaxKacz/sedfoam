@@ -58,7 +58,7 @@ Foam::tmp<Foam::volScalarField> Foam::kineticTheoryModels::noneSaltation::musalt
 (
         const volScalarField& alpha,
         const volScalarField& Theta,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
         const volScalarField& K
 ) const
@@ -77,7 +77,7 @@ Foam::kineticTheoryModels::noneSaltation::kappasalt
 (
         const volScalarField& alpha,
         const volScalarField& Theta,
-        const dimensionedScalar& rhoa,
+        const volScalarField& rhoa,
         const dimensionedScalar& da,
         const volScalarField& K
 ) const

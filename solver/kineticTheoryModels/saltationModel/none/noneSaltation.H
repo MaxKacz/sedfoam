@@ -75,7 +75,7 @@ public:
         (
             const volScalarField& alpha,
             const volScalarField& Theta,
-            const dimensionedScalar& rhoa,
+            const volScalarField& rhoa,
             const dimensionedScalar& da,
             const volScalarField& K
         ) const;
@@ -84,7 +84,7 @@ public:
         (
             const volScalarField& alpha,
             const volScalarField& Theta,
-            const dimensionedScalar& rhoa,
+            const volScalarField& rhoa,
             const dimensionedScalar& da,
             const volScalarField& K
         ) const;

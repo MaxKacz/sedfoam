@@ -103,13 +103,16 @@ Foam::phaseModel::phaseModel
     ),
     rho_
     (
-        dimensionedScalar::getOrDefault
+        IOobject
         (
-            "rho",
-            dict_,
-            dimensionSet(1, -3, 0, 0, 0, 0, 0),
-            1e3
-        )
+            IOobject::groupName("rho", phaseName),
+            mesh.time().timeName(),
+            mesh,
+            IOobject::READ_IF_PRESENT,
+            IOobject::NO_WRITE
+        ),
+        mesh,
+        volScalarField("rho", dimensionSet(1, -3, 0, 0, 0, 0, 0), 1e3)
     ),
     U_
     (

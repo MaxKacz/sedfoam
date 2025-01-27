@@ -69,7 +69,7 @@ Foam::kineticTheoryModels::nonePseudoConductivity::kappaAlpha
     const volScalarField& Theta,
     const volScalarField& g0,
     const volScalarField& g0prime,
-    const dimensionedScalar& rhoa,
+    const volScalarField& rhoa,
     const dimensionedScalar& da,
     const dimensionedScalar& e
 ) const
