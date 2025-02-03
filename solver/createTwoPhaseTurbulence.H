@@ -214,3 +214,34 @@ volScalarField ESD
     ),
     KE3*ESD3
 );
+
+volScalarField ESD4CBuoy
+(
+    IOobject
+    (
+        "ESD4CBuoy",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::NO_WRITE
+    ),
+    (-(SUS/(beta*rhob))*(rhoa/rhob-1.0)*(fvc::grad(p_rbgh) + rhob*gravity) & fvc::grad(alpha)) + KE1*ESD1
+);
+
+volScalarField ESD5CBuoy
+(
+    IOobject
+    (
+        "ESD5CBuoy",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::NO_WRITE
+    ),
+    max
+    (
+        -(SUS/(beta*rhob))*(rhoa/rhob-1.0)*(fvc::grad(p_rbgh) + rhob*gravity) & fvc::grad(alpha),
+        scalar(0.0)*ESD1
+    )
+    + KE1*ESD1
+);

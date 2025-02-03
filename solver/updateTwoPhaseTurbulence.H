@@ -70,3 +70,20 @@ ESD5 = ESD5 + KE1*ESD1;
 ESD3 = -2.0*K*alpha/rhob;
 
 ESD = KE3*ESD3;   //need to check here!
+
+
+
+// Modified buoyancy term :
+
+// stratification
+ESD4CBuoy = - SUS/(beta*rhob)*(rhoa/rhob-1.0)*(fvc::grad(p_rbgh) + rhob*gravity) & fvc::grad(alpha);
+// if ESD4 < 0, then it should be implemented, else, no
+ESD4CBuoy = min(ESD4CBuoy, scalar(0.0)*ESD4CBuoy);
+ESD4CBuoy = ESD4CBuoy + KE1*ESD1;
+
+
+// the following term is implemented in epsilon equation.
+ESD5CBuoy = - SUS/(beta*rhob)*(rhoa/rhob-1.0)*(fvc::grad(p_rbgh) + rhob*gravity) & fvc::grad(alpha);
+// if ESD5 > 0, then it should be implemented, else, no
+ESD5CBuoy = max(ESD5CBuoy, scalar(0.0)*ESD5CBuoy);
+ESD5CBuoy = ESD5CBuoy + KE1*ESD1;

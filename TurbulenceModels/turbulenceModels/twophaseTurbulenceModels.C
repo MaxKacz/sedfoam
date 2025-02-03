@@ -92,6 +92,9 @@ makeRASModel(twophaseMixingLengthBerzi);
 #include "twophasekOmega.H"
 makeRASModel(twophasekOmega);
 
+#include "twophasekOmegaCBuoy.H"
+makeRASModel(twophasekOmegaCBuoy);
+
 #include "twophasekOmegaVeg.H"
 makeRASModel(twophasekOmegaVeg);
 
